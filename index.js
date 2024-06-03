@@ -31,7 +31,7 @@ let posts=[
     },
 ]
 
-app.get("/posts",(req,res)=>{
+app.get("/",(req,res)=>{
     res.render("index.ejs",{posts});
 })
 app.get("https://seztweets.onrender.com/posts/new",(req,res)=>{
