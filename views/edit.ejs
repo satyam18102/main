@@ -15,7 +15,7 @@
         <h2>Edit your Post</h2>
         <p>Post id:<%= post.id %></p>
         <p>Username:<%= post.username %></p>
-        <form method="post" action="/seztweets.onrender.com/posts/<%= post.id %>?_method=PATCH">
+        <form method="post" action="/posts/<%= post.id %>?_method=PATCH">
             <textarea name="content" rows="10" cols="30" ><%= post.content %></textarea>
             <button>Submit</button>
         </form>
