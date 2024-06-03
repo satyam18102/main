@@ -41,7 +41,7 @@ app.post("/seztweets.onrender.com/posts",(req,res)=>{
     let{username,content}=req.body;
     let id=uuidv4();
     posts.push({id,username,content});
-    res.redirect("/seztweets.onrender.com/posts");
+    res.redirect("https://seztweets.onrender.com/posts");
 })
 
 app.get("/seztweets.onrender.com/posts/:id",(req,res)=>{
@@ -55,7 +55,7 @@ app.patch("/seztweets.onrender.com/posts/:id",(req,res)=>{
     let newContent=req.body.content;
     let post=posts.find((p) => id===p.id);
     post.content=newContent;
-    res.redirect("/seztweets.onrender.com/posts");
+    res.redirect("https://seztweets.onrender.com/posts");
 })
 
 app.delete("/posts/:id",(req,res)=>{
