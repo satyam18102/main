@@ -24,7 +24,7 @@
             <h3> @<%= post.username %> </h3>
             <h4> <%= post.content%> </h4>
             <a href="/seztweets.onrender.com/posts/<%=post.id%>">Show Full</a>
-            <a href="/seztweets.onrender.com/<%=post.id%>/edit">Edit Post</a>
+            <a href="/posts/<%=post.id%>/edit">Edit Post</a>
             <br>
             <form method="post" action="/posts/<%= post.id %>?_method=DELETE" >
                 <button>Delete Post</button>
