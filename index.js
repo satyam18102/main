@@ -14,20 +14,20 @@ app.set("views",path.join(__dirname,"views"));
 app.use(express.static(path.join(__dirname,"public")));
 
 let posts=[
+    // {
+    //     id:uuidv4(),
+    //     username:"Chacha",
+    //     content:"Gaand marao"
+    // },
+    // {
+    //     id:uuidv4(),
+    //     username:"Kits",
+    //     content:"10 CGPA"
+    // },
     {
         id:uuidv4(),
-        username:"Chacha",
-        content:"Gaand marao"
-    },
-    {
-        id:uuidv4(),
-        username:"Kits",
-        content:"10 CGPA"
-    },
-    {
-        id:uuidv4(),
-        username:"Chhapri",
-        content:"Chutiya Silicon"
+        username:"Admin",
+        content:"Welcome to Twitter,You can share your thoughts here"
     },
 ]
 
