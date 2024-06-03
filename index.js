@@ -61,7 +61,7 @@ app.patch("/seztweets.onrender.com/posts/:id",(req,res)=>{
 app.delete("/seztweets.onrender.com/posts/:id",(req,res)=>{
     let {id}=req.params;
     posts=posts.filter((p)=> id!==p.id);
-    res.redirect("/seztweets.onrender.com/posts");
+    res.redirect("/posts");
 })
 
 app.get("/seztweets.onrender.com/posts/:id/edit",(req,res)=>{
