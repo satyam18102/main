@@ -37,11 +37,11 @@ app.get("/",(req,res)=>{
 app.get("/seztweets.onrender.com/posts/new",(req,res)=>{
     res.render("new.ejs")
 })
-app.post("/seztweets.onrender.com/posts",(req,res)=>{
+app.post("/posts",(req,res)=>{
     let{username,content}=req.body;
     let id=uuidv4();
     posts.push({id,username,content});
-    res.redirect("https://seztweets.onrender.com/posts");
+    res.redirect("https://seztweets.onrender.com");
 })
 
 app.get("/seztweets.onrender.com/posts/:id",(req,res)=>{
