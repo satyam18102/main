@@ -55,7 +55,7 @@ app.patch("/seztweets.onrender.com/posts/:id",(req,res)=>{
     let newContent=req.body.content;
     let post=posts.find((p) => id===p.id);
     post.content=newContent;
-    res.redirect("https://seztweets.onrender.com/posts");
+    res.redirect("https://seztweets.onrender.com");
 })
 
 app.delete("/posts/:id",(req,res)=>{
