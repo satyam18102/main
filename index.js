@@ -64,7 +64,7 @@ app.delete("/posts/:id",(req,res)=>{
     res.redirect("https://seztweets.onrender.com");
 })
 
-app.get("/seztweets.onrender.com/posts/:id/edit",(req,res)=>{
+app.get("/seztweets.onrender.com/:id/edit",(req,res)=>{
     let {id}=req.params;
     let post=posts.find((p) => id===p.id);
     res.render("edit.ejs",{post})
