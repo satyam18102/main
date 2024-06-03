@@ -34,37 +34,37 @@ let posts=[
 app.get("/",(req,res)=>{
     res.render("index.ejs",{posts});
 })
-app.get("https://seztweets.onrender.com/posts/new",(req,res)=>{
+app.get("/seztweets.onrender.com/posts/new",(req,res)=>{
     res.render("new.ejs")
 })
-app.post("https://seztweets.onrender.com/posts",(req,res)=>{
+app.post("/seztweets.onrender.com/posts",(req,res)=>{
     let{username,content}=req.body;
     let id=uuidv4();
     posts.push({id,username,content});
-    res.redirect("https://seztweets.onrender.com/posts");
+    res.redirect("/seztweets.onrender.com/posts");
 })
 
-app.get("https://seztweets.onrender.com/posts/:id",(req,res)=>{
+app.get("/seztweets.onrender.com/posts/:id",(req,res)=>{
     let {id}=req.params;
     let post=posts.find((p) => id===p.id);
     res.render("show.ejs",{post});
 })
 
-app.patch("https://seztweets.onrender.com/posts/:id",(req,res)=>{
+app.patch("/seztweets.onrender.com/posts/:id",(req,res)=>{
     let {id}=req.params;
     let newContent=req.body.content;
     let post=posts.find((p) => id===p.id);
     post.content=newContent;
-    res.redirect("https://seztweets.onrender.com/posts");
+    res.redirect("/seztweets.onrender.com/posts");
 })
 
-app.delete("https://seztweets.onrender.com/posts/:id",(req,res)=>{
+app.delete("/seztweets.onrender.com/posts/:id",(req,res)=>{
     let {id}=req.params;
     posts=posts.filter((p)=> id!==p.id);
-    res.redirect("https://seztweets.onrender.com/posts");
+    res.redirect("/seztweets.onrender.com/posts");
 })
 
-app.get("https://seztweets.onrender.com/posts/:id/edit",(req,res)=>{
+app.get("/seztweets.onrender.com/posts/:id/edit",(req,res)=>{
     let {id}=req.params;
     let post=posts.find((p) => id===p.id);
     res.render("edit.ejs",{post})
