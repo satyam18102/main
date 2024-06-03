@@ -50,7 +50,7 @@ app.get("/seztweets.onrender.com/posts/:id",(req,res)=>{
     res.render("show.ejs",{post});
 })
 
-app.patch("/seztweets.onrender.com/posts/:id",(req,res)=>{
+app.patch("/posts/:id",(req,res)=>{
     let {id}=req.params;
     let newContent=req.body.content;
     let post=posts.find((p) => id===p.id);
@@ -58,7 +58,7 @@ app.patch("/seztweets.onrender.com/posts/:id",(req,res)=>{
     res.redirect("/seztweets.onrender.com/posts");
 })
 
-app.delete("/seztweets.onrender.com/posts/:id",(req,res)=>{
+app.delete("/posts/:id",(req,res)=>{
     let {id}=req.params;
     posts=posts.filter((p)=> id!==p.id);
     res.redirect("/posts");
