@@ -37,34 +37,34 @@ app.get("/",(req,res)=>{
 app.get("https://seztweets.onrender.com/posts/new",(req,res)=>{
     res.render("new.ejs")
 })
-app.post("/posts",(req,res)=>{
+app.post("https://seztweets.onrender.com/posts",(req,res)=>{
     let{username,content}=req.body;
     let id=uuidv4();
     posts.push({id,username,content});
-    res.redirect("/posts");
+    res.redirect("https://seztweets.onrender.com/posts");
 })
 
-app.get("/posts/:id",(req,res)=>{
+app.get("https://seztweets.onrender.com/posts/:id",(req,res)=>{
     let {id}=req.params;
     let post=posts.find((p) => id===p.id);
     res.render("show.ejs",{post});
 })
 
-app.patch("/posts/:id",(req,res)=>{
+app.patch("https://seztweets.onrender.com/posts/:id",(req,res)=>{
     let {id}=req.params;
     let newContent=req.body.content;
     let post=posts.find((p) => id===p.id);
     post.content=newContent;
-    res.redirect("/posts");
+    res.redirect("https://seztweets.onrender.com/posts");
 })
 
-app.delete("/posts/:id",(req,res)=>{
+app.delete("https://seztweets.onrender.com/posts/:id",(req,res)=>{
     let {id}=req.params;
     posts=posts.filter((p)=> id!==p.id);
-    res.redirect("/posts");
+    res.redirect("https://seztweets.onrender.com/posts");
 })
 
-app.get("/posts/:id/edit",(req,res)=>{
+app.get("https://seztweets.onrender.com/posts/:id/edit",(req,res)=>{
     let {id}=req.params;
     let post=posts.find((p) => id===p.id);
     res.render("edit.ejs",{post})
@@ -73,6 +73,6 @@ app.get("/posts/:id/edit",(req,res)=>{
 app.listen(port,()=>{
     console.log(`Server is listening to Port:${port}`);
 })
-app.get("/",(req,res)=>{
-    res.send("Root Page");
-})
+// app.get("/",(req,res)=>{
+//     res.send("Root Page");
+// })
