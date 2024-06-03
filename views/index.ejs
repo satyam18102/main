@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="twitter.png">
+    <link rel="stylesheet" href="index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cookie&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <title>Twitter</title>
+</head>
+<body>
+    <div class="nav">
+        <h1>Twitter</h1>
+        <form action="http://localhost:3000/posts/new" class="new">
+            <button type="submit" class="po">New Post</button>
+        </form>
+    </div>
+    <hr>
+    <%for(post of posts){%>
+        <div class="card">
+            <p><%=post.id%></p>
+            <h3> @<%= post.username %> </h3>
+            <h4> <%= post.content%> </h4>
+            <a href="http://localhost:3000/posts/<%=post.id%>">Show Full</a>
+            <a href="http://localhost:3000/posts/<%=post.id%>/edit">Edit Post</a>
+            <br>
+            <form method="post" action="/posts/<%= post.id %>?_method=DELETE" >
+                <button>Delete Post</button>
+            </form>
+        </div>
+        <!-- <hr> -->
+    <%}%>
+    <br>
+    
+    <!-- <a href="http://localhost:3000/posts/new">Create new Post</a> -->
+</body>
+</html>
