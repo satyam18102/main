@@ -13,7 +13,7 @@
 <body>
     <div class="nav">
         <h1>Twitter</h1>
-        <form action="https://seztweets.onrender.com/posts/new" class="new">
+        <form action="/seztweets.onrender.com/posts/new" class="new">
             <button type="submit" class="po">New Post</button>
         </form>
     </div>
@@ -23,10 +23,10 @@
             <p><%=post.id%></p>
             <h3> @<%= post.username %> </h3>
             <h4> <%= post.content%> </h4>
-            <a href="https://seztweets.onrender.com/posts/<%=post.id%>">Show Full</a>
-            <a href="https://seztweets.onrender.com/<%=post.id%>/edit">Edit Post</a>
+            <a href="/seztweets.onrender.com/posts/<%=post.id%>">Show Full</a>
+            <a href="/seztweets.onrender.com/<%=post.id%>/edit">Edit Post</a>
             <br>
-            <form method="post" action="https://seztweets.onrender.com/posts/<%= post.id %>?_method=DELETE" >
+            <form method="post" action="/seztweets.onrender.com/posts/<%= post.id %>?_method=DELETE" >
                 <button>Delete Post</button>
             </form>
         </div>
